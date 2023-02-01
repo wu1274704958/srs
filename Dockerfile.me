@@ -1,0 +1,11 @@
+# syntax=docker/dockerfile:1
+FROM centos:7
+RUN yum install -y gcc make gcc-c++ patch unzip perl git
+WORKDIR /srs
+COPY . .
+WORKDIR /srs/trunk
+
+RUN ./configure
+RUN make
+CMD [ "./objs/srs", "-c", "conf/rtmp2rtc.fast.docker.conf" ]
+EXPOSE 1935 1985 8080 8000/udp 10080/udp
