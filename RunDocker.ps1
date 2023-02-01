@@ -3,3 +3,4 @@ docker run -it --rm -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:
       ey1274704958/srs
 docker ps
 echo $env:CANDIDATE
+echo "http://localhost:8080/players/rtc_player.html?autostart=true&stream=livestream&port=8080&schema=http"
